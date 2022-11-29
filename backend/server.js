@@ -1,6 +1,20 @@
 const express = require('express');
 const http = require('http');
-const helmet = require("helmet");
+var helmet = require('helmet');// security headers 
+//import { Logtail } from "@logtail/node";
+
+/*
+const cookieParser = require('cookie-parser');
+const sessions = require('express-session');
+
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+*/
+
+
+
+
+
 
 //requiring path 
 const path = require('path');
@@ -17,7 +31,10 @@ const cors = require('cors');
 
 //winston logging
 
-//definig port number
+
+
+
+//defining port number
 const PORT = process.env.API_PORT|| 8080    
 
 //middleware , express.json parses incoming JSON requests and puts the parsed data in req.body bc u are sending data. think about a twitter post
@@ -30,10 +47,7 @@ app.use("/api/auth", authRoutes);
 
 console.log("spinning up the server")
 const server = http.createServer(app)
-/*server.listen(PORT, () => {
-    console.log(`server is listening on ${PORT}`); 
-})
-*/
+
 //connecting to mongo atlas database, if connects successfully it will console listen on port 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
