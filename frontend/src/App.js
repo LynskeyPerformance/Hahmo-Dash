@@ -20,7 +20,7 @@ function App() {
       <CssBaseline /> {/*its like a css reset*/}
       <Routes> 
         <Route element={<Layout />}> {/* every route thats in here will have the same sidebar and navbar layout */}
-        <Route path="/" element={<Navigate to="/dashboard" replace />} /> {/* if we go to the default homepage we will be navigated to the dashboard  */}
+        <Route path="/" element={<Navigate to="/dashboard" replace />} /> {/* if we go to the default homepage we will be navigated to the dashboard */}
         <Route path="/dashboard" element={<Dashboard />} /> {/* this is the dashboard route which will be rendered */}
         </Route>
       </Routes>
