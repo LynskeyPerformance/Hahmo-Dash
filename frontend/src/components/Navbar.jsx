@@ -49,6 +49,21 @@ const Navbar = () => {
             </FlexBetween>
           </IconButton>
         </FlexBetween>
+               {/* RIGHT SIDE */}
+               <FlexBetween gap= "1.5rem"> 
+               <IconButton onClick={() => dispatch(setMode())}> 
+                    {theme.palette.mode === 'dark' ? (
+                        <DarkModeOutlined sx={{fontSize: "25px"}} /> 
+                    ) : (
+                        <LightModeOutlined sx={{fontSize: "25px"}} /> 
+                    )
+                    }
+               </IconButton>
+                    <SettingsOutlined sx={{fontSize: "25px"}} /> 
+               <IconButton>
+
+               </IconButton>
+               </FlexBetween>
       </Toolbar>
     </AppBar>
   );
