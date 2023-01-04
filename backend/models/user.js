@@ -1,12 +1,38 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
-mail: { type: String, unique: true },
-username: { type: String },
-password: { type: String },
-friends: [{type: Schema.Types.Object, ref: 'User'}],
-})
+const UserSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      min: 2,
+      max: 100,
+    },
+    email: {
+      type: String,
+      required: true,
+      max: 50,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      min: 5,
+    },
+    city: String,
+    state: String,
+    country: String,
+    occupation: String,
+    phoneNumber: String,
+    transactions: Array,
+    role: {
+      type: String,
+      enum: ["user", "admin", "superadmin"],
+      default: "admin",
+    },
+  },
+  { timestamps: true }
+);
 
-//we export so we can import (use) file functions under a different file. essentially to seperate stuff so things arent messy 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model("User", UserSchema);
+export default User;

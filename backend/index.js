@@ -13,6 +13,10 @@ import salesRoutes from "./routes/sales.js"
 import generalRoutes from "./routes/general.js"
 import managementRoutes from "./routes/management.js"
 
+// data imports 
+import User from "./models/User.js"
+import { dataUser } from "./data/index.js"
+
 /*Configurations*/
 dotenv.config();
 const app = express(); // why do we need parenthesis after some configs but not others? -- Ans: shows that your dealing with functions, lets the compiler know to treat the lien as a function
@@ -44,6 +48,9 @@ mongoose.connect(process.env.MONGO_URI, {
     //starting the server
 app.listen(PORT, () =>{
     console.log(`listening on port ${PORT}`);
+
+    // only add data one time, so we do not have duplicate  data 
+    User.insertMany(dataUser); 
 });
 })
 .catch((err) => {
