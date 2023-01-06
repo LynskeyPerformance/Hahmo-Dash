@@ -50,7 +50,7 @@ app.listen(PORT, () =>{
     console.log(`listening on port ${PORT}`);
 
     // only add data one time, so we do not have duplicate  data 
-    User.insertMany(dataUser); 
+    //User.insertMany(dataUser); 
 });
 })
 .catch((err) => {
