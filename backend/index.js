@@ -15,11 +15,13 @@ import managementRoutes from "./routes/management.js"
 
 // data imports 
 import User from "./models/User.js"
-import { dataUser } from "./data/index.js"
+import Product from "./models/Product.js"
+import ProductStat from "./models/ProductStat.js"
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js"
 
 /*Configurations*/
 dotenv.config();
-const app = express(); // why do we need parenthesis after some configs but not others? -- Ans: shows that your dealing with functions, lets the compiler know to treat the lien as a function
+const app = express(); // why do we need parenthesis after some configs but not others? -- Ans: shows that your dealing with functions, lets the compiler know to treat the line as a function
 app.use(express.json())
 app.use(helmet());
 //the use of helmet with crossorigin is to protect the http calls from other servers 
@@ -49,7 +51,9 @@ mongoose.connect(process.env.MONGO_URI, {
 app.listen(PORT, () =>{
     console.log(`listening on port ${PORT}`);
 
-    // only add data one time, so we do not have duplicate  data 
+// only add data one time, so we do not have duplicate  data 
+    //Product.insertMany(dataProduct)
+    //ProductStat.insertMany(dataProductStat)
     //User.insertMany(dataUser); 
 });
 })
