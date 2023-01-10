@@ -27,6 +27,7 @@ import {
   AdminPanelSettingsOutlined,
   TrendingUpOutlined,
   PieChartOutlined,
+  ChatOutlined,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -37,6 +38,10 @@ const navItems = [
   {
     text: "Dashboard",
     icon: <HomeOutlined />,
+  },
+  {
+    text: "Chat",
+    icon: <ChatOutlined />,
   },
   {
     text: "Client Facing",
