@@ -24,6 +24,8 @@ import {
   useTheme,
 } from "@mui/material";
 
+// note: the occupation and username isnt showing by the icons on the side or nav bar  
+
 const Navbar = ({ 
   user,
   isSidebarOpen,
