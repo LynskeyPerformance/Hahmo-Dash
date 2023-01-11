@@ -51,7 +51,7 @@ mongoose.connect(process.env.MONGO_URI, {
 app.listen(PORT, () =>{
     console.log(`listening on port ${PORT}`);
 
-// only add data one time, so we do not have duplicate  data 
+// only add data one time, so we do not have duplicate data 
     //Product.insertMany(dataProduct)
     //ProductStat.insertMany(dataProductStat)
     //User.insertMany(dataUser); 

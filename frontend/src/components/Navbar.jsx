@@ -111,7 +111,8 @@ const Navbar = ({
              
                 </Button>
                 <Menu anchorEl={anchorEl} open={isOpen} onClose={handleClose} anchorOrigin={{ vertical: "bottom", horizontal:"center" }}>
-                  <MenuItem onClick={handleClose} disableRipple>BigCommerce</MenuItem>
+                  <MenuItem onClick={handleClose} disableRipple> <a target="_blank" href="https://login.bigcommerce.com/login">BigCommerce</a></MenuItem>
+                  
                   <MenuItem onClick={handleClose} disableRipple>Log Out</MenuItem>
                 </Menu>
                </FlexBetween>

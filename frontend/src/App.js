@@ -5,6 +5,8 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
+
+import Products from "scenes/products"
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
 
@@ -22,6 +24,7 @@ function App() {
         <Route element={<Layout />}> {/* every route thats in here will have the same sidebar and navbar layout */}
         <Route path="/" element={<Navigate to="/dashboard" replace />} /> {/* if we go to the default homepage we will be navigated to the dashboard */}
         <Route path="/dashboard" element={<Dashboard />} /> {/* this is the dashboard route which will be rendered */}
+        <Route path="/products" element={<Products />} />
         </Route>
       </Routes>
     </ThemeProvider>
