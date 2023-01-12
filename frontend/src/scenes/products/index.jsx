@@ -100,11 +100,11 @@ const Products = () => {
           justifyContent="space-between"
           rowGap="20px"
           columnGap="1.33%"
-          sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }} 
-        }
-         
+          sx={{
+            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
+          }}
         >
-          {data.map(
+          {data?.map(
             ({
               _id,
               name,
