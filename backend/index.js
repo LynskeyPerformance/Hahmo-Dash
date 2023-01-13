@@ -53,8 +53,8 @@ app.listen(PORT, () =>{
 
 // only add data one time, so we do not have duplicate data 
     //Product.insertMany(dataProduct)
-    //ProductStat.insertMany(dataProductStat)
-    //User.insertMany(dataUser); 
+   // ProductStat.insertMany(dataProductStat)
+   // User.insertMany(dataUser); 
 });
 })
 .catch((err) => {

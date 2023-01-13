@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 
-import Products from "scenes/products"
+import Products from "scenes/products";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
 
