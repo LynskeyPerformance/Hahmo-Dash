@@ -110,7 +110,6 @@ const Products = () => {
           {data?.map(
             ({
               _id,
-  
               name,
               description,
               price,

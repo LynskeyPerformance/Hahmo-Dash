@@ -9,6 +9,7 @@ import { themeSettings } from "theme";
 import Products from "scenes/products";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
+import Customers from "scenes/customers"; 
 
 //this function is for theme, light and dark modes thats stored in the state. Material UI documentation? 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Navigate to="/dashboard" replace />} /> {/* if we go to the default homepage we will be navigated to the dashboard */}
         <Route path="/dashboard" element={<Dashboard />} /> {/* this is the dashboard route which will be rendered */}
         <Route path="/products" element={<Products />} />
+        <Route path="/customers" element={<Customers />} />
         </Route>
       </Routes>
     </ThemeProvider>

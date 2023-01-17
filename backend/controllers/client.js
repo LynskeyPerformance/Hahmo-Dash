@@ -26,11 +26,12 @@ export const getProducts = async (req, res) => {
 
   export const getCustomers = async(req,res) => {
     try {
-      const customers = await User.find({ role: "user" }).select("-password");
+      const customers = await User.find({ role: "user" }).select("-password"); // minus password so we dont send it to the frontend 
 
       res.status(200).json(customers);
     } catch (error) {
       res.status(404).json({ message: error.message });
     }
-  }
+  };
+
 // essentially grabbing every product along with its id 
