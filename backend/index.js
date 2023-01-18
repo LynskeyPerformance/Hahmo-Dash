@@ -39,25 +39,17 @@ app.use("/management", managementRoutes);
 
 //defining port number
 const PORT = process.env.API_PORT|| 8080;    
-console.log("spinning up the server")
-
-
-//connecting to mongo atlas database, if connects successfully it will console listen on port 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true, 
-}).then(() => {
-    //starting the server
-app.listen(PORT, () =>{
-    console.log(`listening on port ${PORT}`);
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
 // only add data one time, so we do not have duplicate data 
-    //Product.insertMany(dataProduct)
-   // ProductStat.insertMany(dataProductStat)
-   // User.insertMany(dataUser); 
-});
+  //Product.insertMany(dataProduct)
+  //  ProductStat.insertMany(dataProductStat)
+  // User.insertMany(dataUser); 
 })
-.catch((err) => {
-    console.log("database connection failed. Server not started");
-    console.error(err);
-  }); 
+.catch((error) => console.log(`${error} did not connect`));

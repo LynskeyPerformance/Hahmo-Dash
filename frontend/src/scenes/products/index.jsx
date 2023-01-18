@@ -22,7 +22,6 @@ const Product = ({
   rating,
   category,
   supply,
-  product,
   stat,
 }) => {
   const theme = useTheme();
@@ -68,7 +67,7 @@ const Product = ({
         timeout="auto"
         unmountOnExit
         sx={{
-          color: theme.palette.neutral[300],
+          color: theme.palette.neutral[300]
         }}
       >
         <CardContent>
@@ -88,7 +87,6 @@ const Product = ({
 
 const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
-  console.log("data",data)
 
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
