@@ -10,6 +10,8 @@ import {
   Rating,
   useTheme,
   useMediaQuery,
+  CircularProgress,
+ 
 } from "@mui/material";
 import Header from "components/Header";
 import { useGetProductsQuery } from "state/api";
@@ -26,7 +28,6 @@ const Product = ({
 }) => {
   const theme = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
-
   return (
     <Card
       sx={{
@@ -50,7 +51,6 @@ const Product = ({
           ${Number(price).toFixed(2)}
         </Typography>
         <Rating value={rating} readOnly />
-
         <Typography variant="body2">{description}</Typography>
       </CardContent>
       <CardActions>
@@ -66,20 +66,14 @@ const Product = ({
         in={isExpanded}
         timeout="auto"
         unmountOnExit
-        sx={{
-          color: theme.palette.neutral[300]
-        }}
+        sx={{ color: theme.palette.neutral[300] }}
       >
-        <CardContent>
-          <Typography>id: {_id}</Typography>
-          <Typography>Supply Left: {supply}</Typography>
-          <Typography>
-            Yearly Sales This Year: {stat[0].yearlySalesTotal}
-          </Typography>
-          <Typography>
-            Yearly Units Sold This Year: {stat[0].yearlyTotalSoldUnits}
-          </Typography>
-        </CardContent>
+        <Typography>id: {_id}</Typography>
+        <Typography>Supply Left: {supply}</Typography>
+        <Typography>Yearly Sales This Year: {stat[0].yearlySalesTotal}</Typography>
+        <Typography>
+          Yearly Units Sold This Year: {stat[0].yearlyTotalSoldUnits}
+        </Typography>
       </Collapse>
     </Card>
   );
@@ -87,17 +81,16 @@ const Product = ({
 
 const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
-
-  const isNonMobile = useMediaQuery("(min-width: 1000px)");
+  const isNonMobile = useMediaQuery("(min-width:1000px");
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="PRODUCTS" subtitle="See your list of products." />
-      { data || !isLoading ? (
+      <Header title="Products" subtitle="See your list of products" />
+      {data || !isLoading ? (
         <Box
           mt="20px"
           display="grid"
-          gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+          gridTemplateColumns="repeat(4,minmax(0,1fr))"
           justifyContent="space-between"
           rowGap="20px"
           columnGap="1.33%"
@@ -131,7 +124,7 @@ const Products = () => {
           )}
         </Box>
       ) : (
-        <>Loading...</>
+        <CircularProgress />
       )}
     </Box>
   );
