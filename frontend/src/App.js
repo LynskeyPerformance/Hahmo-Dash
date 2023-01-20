@@ -10,6 +10,7 @@ import Products from "scenes/products";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
 import Customers from "scenes/customers"; 
+import Transactions from "scenes/transactions"
 
 //this function is for theme, light and dark modes thats stored in the state. Material UI documentation? 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} /> {/* this is the dashboard route which will be rendered */}
         <Route path="/products" element={<Products />} />
         <Route path="/customers" element={<Customers />} />
+        <Route path="/transactions" element={<Transactions />} />
         </Route>
       </Routes>
     </ThemeProvider>

@@ -35,6 +35,7 @@ export const getProducts = async (req, res) => {
     }
   };
 
+  // essentially getting all that information from mongodb and sending it to the frontend 
   export const getTransaction = async (req, res) => {
     try {
       const {page = 1, pageSize = 20, sort = null, search = "" } = req.query
@@ -54,10 +55,21 @@ export const getProducts = async (req, res) => {
           { cost: { $regex: new RegExp(search, "i") } }
         
         ], //search the cost of the value 
-      }); 
+      })
+      .sort(sortFormatted)
+      .skip(page * pageSize)
+      .limit(pageSize)
+
+const total = await Transaction.countDocuments(({
+  name: { $regex: search, $options: "i"}
+}))
 
 
-      res.status(200).json();
+
+      res.status(200).json({
+        transactions,
+        total
+      });
     } catch (error) {
       res.status(404).json({ message: error.message });
     }
