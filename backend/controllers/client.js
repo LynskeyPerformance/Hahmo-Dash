@@ -36,7 +36,7 @@ export const getProducts = async (req, res) => {
   };
 
   // essentially getting all that information from mongodb and sending it to the frontend 
-  export const getTransaction = async (req, res) => {
+  export const getTransactions = async (req, res) => {
     try {
       const {page = 1, pageSize = 20, sort = null, search = "" } = req.query
       const generateSort = () => {
