@@ -18,7 +18,8 @@ import User from "./models/User.js"
 import Product from "./models/Product.js"
 import ProductStat from "./models/ProductStat.js"
 import Transaction from "./models/Transaction.js";
-import { dataUser, dataProduct, dataProductStat, dataTransaction } from "./data/index.js"
+import OverallStat from './models/overallStat.js';
+import { dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat } from "./data/index.js"
 
 /*Configurations*/
 dotenv.config();
@@ -50,6 +51,7 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
 // only add data one time, so we do not have duplicate data 
+//OverallStat.insertMany(dataOverallStat)
  // Product.insertMany(dataProduct);
   //ProductStat.insertMany(dataProductStat);
   //User.insertMany(dataUser); 

@@ -11,8 +11,13 @@ import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
 import Customers from "scenes/customers"; 
 import Transactions from "scenes/transactions"
-import Chat from "scenes/chat";
+import Overview from "scenes/overview";
 import Geography from "scenes/geography";
+import Chat from "scenes/chat"
+import Daily from "scenes/daily";
+import Monthly from "scenes/monthly";
+import Breakdown from "scenes/breakdown";
+
 
 //this function is for theme, light and dark modes thats stored in the state. Material UI documentation? 
 function App() {
@@ -33,6 +38,12 @@ function App() {
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/geography" element={<Geography />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/daily" element={<Daily />} />
+        <Route path="/monthly" element={<Monthly />} />
+        <Route path="/breakdown" element={<Breakdown />} />
+
+     
         </Route>
       </Routes>
     </ThemeProvider>
