@@ -1,9 +1,8 @@
 # Hahmo-Dash
-Hahmo Dashboard is an internal hub for Lynskey Performance's many needs. 
 The dashboard takes on many metrics so users can have a clear and concise idea 
-of how the company is performing. Ideally it is a one stop shop for operations as 
+of how a particular company is performing. Ideally it is a one stop shop for operations as 
 one may want to track revenues, operational costs, inventory, promotions, customer feedback
-and more.
+and more. Followed EdRoh's tutorial https://youtu.be/0cPCMIuDk2I
 
 # Technologies Used 
 ![MongoDB Label](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
